@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"/>
+		<title> Морской бой </title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>		
+	</head>
+	
+	<body>
+        <div class ="form" id = "menu"> 
+			<samp class ="gameIs">Морской бой</samp><br/><br/>
+			<img id = "anchor" src="img/icon/anchor.png"/><br/><br/>
+			<input type="button" class="button"  value="Играть против компьютера" id="btnComputer" onclick="begin('vsComputer')"/><br/><br/>
+			<input type="button" class="button"  value="Играть с другом" id="btnPlayer" onclick="begin('vsPlayer')"/><br/><br/>
+			<input type="button" class="button"  value="Настройки" id="btnSetting" onclick="openPage(document.getElementById('setting'), document.getElementById('menu'))"/><br/><br/>
+			
+
+            
+		</div>
+		<div class ="form" id = "settingName" hidden="true">
+			<samp class="text" id = 'enterFirstName'>Введите имя игрока</samp><br/><br/>
+			<input type="text" class="text" placeholder="Имя" id="nameFirstPlayer" /> <br/> <br/>
+			<samp class="text" id = 'enterSecondName' hidden="true">Введите имя второго игрока</samp><br/><br/>
+			<input type="text" class="text" placeholder="Имя" id="nameSecondPlayer" hidden="true"/> <br/> <br/><br/>
+			<input type="button" class="button"  value="Далее" id="btnNext" onclick="setName(document.getElementById('nameFirstPlayer'), document.getElementById('nameSecondPlayer'))"/><br/>
+			<samp id ="warning"></samp>
+		</div>
+		<div id = "game" class ="form" hidden="true">
+			<div class="shipBoard" id='shipsOne'>
+				<span class = 'textShip'>Расставьте корабли</span><br/><br/>
+				<img class = "icon" src="img/icon/ship_1.png" id ="o1" onclick="shipInitCreate(document.getElementById('1').innerHTML, 1)"/><span id ="1">4</span> <br/>
+				<img class = "icon" src="img/icon/ship_2.png" id ="o2" onclick="shipInitCreate(document.getElementById('2').innerHTML, 2)"/><span id ="2">3</span> <br/>
+				<img class = "icon" src="img/icon/ship_3.png" id ="o3" onclick="shipInitCreate(document.getElementById('3').innerHTML, 3)"/><span id ="3">2</span> <br/>
+				<img class = "icon" src="img/icon/ship_4.png" id ="o4" onclick="shipInitCreate(document.getElementById('4').innerHTML, 4)"/><span id ="4">1</span> <br/> 
+				<img class = "icon" id = "random1" src="img/icon/random.png" onclick="generaeShipLocation()"/>
+			</div>
+			<samp id="areaNameOne">Флот игрока 1</samp><br/><br/>
+			<img id = "areaOne" src="img/fg.png"/>
+			<table id = "playOne">
+				<tr>
+					<td id = "100"></td> <td id = "101"></td> <td id = "102"></td> <td id = "103"></td> <td id = "104"></td> <td id = "105"></td> <td id = "106"></td><td id = "107"></td><td id = "108"></td> <td id = "109"></td> 
+				</tr>
+				<tr>
+					<td id = "110"></td> <td id = "111"></td> <td id = "112"></td> <td id = "113"></td> <td id = "114"></td> <td id = "115"></td> <td id = "116"></td><td id = "117"></td><td id = "118"></td> <td id = "119"></td> 
+				</tr>
+				<tr>
+					<td id = "120" ></td> <td id = "121"></td> <td id = "122"></td> <td id = "123"></td> <td id = "124"></td> <td id = "125"></td> <td id = "126"></td><td id = "127"></td><td id = "128"></td> <td id = "129"></td> 
+				</tr>
+				<tr>
+					<td id = "130"></td> <td id = "131"></td> <td id = "132"></td> <td id = "133"></td> <td id = "134"></td> <td id = "135"></td> <td id = "136"></td><td id = "137"></td><td id = "138"></td> <td id = "139"></td> 
+				</tr>
+				<tr>
+					<td id = "140"></td> <td id = "141"></td> <td id = "142"></td> <td id = "143"></td> <td id = "144"></td> <td id = "145"></td> <td id = "146"></td><td id = "147"></td><td id = "148"></td> <td id = "149"></td> 
+				</tr>
+				<tr>
+					<td id = "150"></td> <td id = "151"></td> <td id = "152"></td> <td id = "153"></td> <td id = "154"></td> <td id = "155"></td> <td id = "156"></td><td id = "157"></td><td id = "158"></td> <td id = "159"></td> 
+				</tr>
+				<tr>
+					<td id = "160"></td> <td id = "161"></td> <td id = "162"></td> <td id = "163"></td> <td id = "164"></td> <td id = "165"></td> <td id = "166"></td><td id = "167"></td><td id = "168"></td> <td id = "169"></td> 
+				</tr>
+				<tr>
+					<td id = "170"></td> <td id = "171"></td> <td id = "172"></td> <td id = "173"></td> <td id = "174"></td> <td id = "175"></td> <td id = "176"></td><td id = "177"></td><td id = "178"></td> <td id = "179"></td> 
+				</tr>
+				<tr>
+					<td id = "180"></td> <td id = "181"></td> <td id = "182"></td> <td id = "183"></td> <td id = "184"></td> <td id = "185"></td> <td id = "186"></td><td id = "187"></td><td id = "188"></td> <td id = "189"></td> 
+				</tr>
+				<tr>
+					<td id = "190"></td> <td id = "191"></td> <td id = "192"></td> <td id = "193"></td> <td id = "194"></td> <td id = "195"></td> <td id = "196"></td><td id = "197"></td><td id = "198"></td> <td id = "199"></td> 
+				</tr>
+			</table>
+			<img class = "icon" id = "updateArea" src="img/icon/update.png" onclick="update()"/>
+
+			<samp id="areaNameTwo" hidden="true">Флот игрока 2 </samp><br/><br/>
+			<img id = "areaTwo" src="img/fg.png" hidden="true"/>
+			<table id = "playTwo">
+				<tr>
+					<td id = "200"></td> <td id = "201"></td> <td id = "202"></td> <td id = "203"></td> <td id = "204"></td> <td id = "205"></td> <td id = "206"></td><td id = "207"></td><td id = "208"></td> <td id = "209"></td> 
+				</tr>
+				<tr>
+					<td id = "210"></td> <td id = "211"></td> <td id = "212"></td> <td id = "213"></td> <td id = "214"></td> <td id = "215"></td> <td id = "216"></td><td id = "217"></td><td id = "218"></td> <td id = "219"></td> 
+				</tr>
+				<tr>
+					<td id = "220" ></td> <td id = "221"></td> <td id = "222"></td> <td id = "223"></td> <td id = "224"></td> <td id = "225"></td> <td id = "226"></td><td id = "227"></td><td id = "228"></td> <td id = "229"></td> 
+				</tr>
+				<tr>
+					<td id = "230"></td> <td id = "231"></td> <td id = "232"></td> <td id = "233"></td> <td id = "234"></td> <td id = "235"></td> <td id = "236"></td><td id = "237"></td><td id = "238"></td> <td id = "239"></td> 
+				</tr>
+				<tr>
+					<td id = "240"></td> <td id = "241"></td> <td id = "242"></td> <td id = "243"></td> <td id = "244"></td> <td id = "245"></td> <td id = "246"></td><td id = "247"></td><td id = "248"></td> <td id = "249"></td> 
+				</tr>
+				<tr>
+					<td id = "250"></td> <td id = "251"></td> <td id = "252"></td> <td id = "253"></td> <td id = "254"></td> <td id = "255"></td> <td id = "256"></td><td id = "257"></td><td id = "258"></td> <td id = "259"></td> 
+				</tr>
+				<tr>
+					<td id = "260"></td> <td id = "261"></td> <td id = "262"></td> <td id = "263"></td> <td id = "264"></td> <td id = "265"></td> <td id = "266"></td><td id = "267"></td><td id = "268"></td> <td id = "269"></td> 
+				</tr>
+				<tr>
+					<td id = "270"></td> <td id = "271"></td> <td id = "272"></td> <td id = "273"></td> <td id = "274"></td> <td id = "275"></td> <td id = "276"></td><td id = "277"></td><td id = "278"></td> <td id = "279"></td> 
+				</tr>
+				<tr>
+					<td id = "280"></td> <td id = "281"></td> <td id = "282"></td> <td id = "283"></td> <td id = "284"></td> <td id = "285"></td> <td id = "286"></td><td id = "287"></td><td id = "288"></td> <td id = "289"></td> 
+				</tr>
+				<tr>
+					<td id = "290"></td> <td id = "291"></td> <td id = "292"></td> <td id = "293"></td> <td id = "294"></td> <td id = "295"></td> <td id = "296"></td><td id = "297"></td><td id = "298"></td> <td id = "299"></td> 
+				</tr>
+			</table>
+			<div class="shipBoard" id='shipsTwo' hidden="true">
+				<span class = 'textShip'>Расставьте корабли</span><br/><br/>
+				<img class = "icon" src="img/icon/ship_1.png" id ="t1" onclick="shipInitCreate(document.getElementById('11').innerHTML, 1)"/><span id ="11">4</span> <br/>
+				<img class = "icon" src="img/icon/ship_2.png" id ="t2" onclick="shipInitCreate(document.getElementById('12').innerHTML, 2)"/><span id ="12">3</span> <br/>
+				<img class = "icon" src="img/icon/ship_3.png" id ="t3" onclick="shipInitCreate(document.getElementById('13').innerHTML, 3)"/><span id ="13">2</span> <br/>
+				<img class = "icon" src="img/icon/ship_4.png" id ="t4" onclick="shipInitCreate(document.getElementById('14').innerHTML, 4)"/><span id ="14">1</span> <br/> 
+				<img class = "icon" id = "random2" src="img/icon/random.png" onclick="generaeShipLocation()"/>
+			</div>
+			<img class = "icon" id = "back" src="img/icon/back.png" onclick="reload()"/>
+			<samp id="massageArea"></samp>
+			<input type="button" class="button" id="btnSaveOne" value="Сохранить" hidden="true" onclick="saveFleetOne()"/><br/>
+			<input type="button" class="button" id="btnBegin" value="Начать игру" onclick="initGame()" hidden="true" /><br/>
+			<input type="button" class="button" id="btnSaveTwo" value="Сохранить" onclick="saveFleetTwo()" hidden="true"/><br/>
+			<img class = "icon" id = "setSound" src="img/icon/soundOn.png" onclick="settingSound(document.getElementById('setSound'), document.getElementById('strSound'))"/>
+			<img class = "icon" id = "setMusic" src="img/icon/musicOn.png" onclick="settingSound(document.getElementById('setMusic'), document.getElementById('strMusic'))"/>
+			
+		</div>
+
+		<div class ="form" id = "setting" hidden="true">
+			<samp class ="gameIs">Настройки</samp><br/><br/>
+			<img id = "iconMusic" src="img/icon/musicOn.png" onclick="settingSound(document.getElementById('iconMusic'), document.getElementById('strMusic'))"/><span class="text" id = "strMusic" onclick="settingSound(document.getElementById('iconMusic'), document.getElementById('strMusic'))">Музыка включена</span><br/><br/>
+			<img id = "iconSound" src="img/icon/soundOn.png" onclick="settingSound(document.getElementById('iconSound'), document.getElementById('strSound'))"/><span class="text" id = "strSound" onclick="settingSound(document.getElementById('iconSound'), document.getElementById('strSound'))">Звуки включены</span><br/><br/><br/>
+			<input type="button" class="button" name="esc" value="Назад" id="btnEsc" onclick="openPage(document.getElementById('menu'), document.getElementById('setting'))"/>
+		</div>
+		
+        <script src="game.js"></script>
+		
+	</body> 
+	
+		
+</html>

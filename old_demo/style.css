@@ -1,0 +1,206 @@
+body{
+    background: url(img/bg.jpg) no-repeat;
+	background-size: cover;
+}
+.form{
+	margin-top: 100px;
+	margin-left: auto;
+    margin-right: auto;
+	width: 400px;
+	padding: 15px;
+	font-size: 18px;
+	background-color: #88A487;
+	border-radius: 50px;
+	box-shadow: 1px 1px 30px #88A487;
+	opacity:0.7;
+	text-align: center;
+	align-content: center;
+}
+.button{
+	font-size: 20px;
+	background-color: #7F8834;
+	border-radius: 20px;
+	text-align: center;
+	color: white;
+	padding: 10px;
+	margin-left: 5px;
+	margin-right: 7px;
+}
+.button:hover{
+	transform: scale(1.2);
+}
+.gameIs{
+    font-size: 40px;
+	font-weight: bolder;
+	font-style: italic;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.text{
+	font-size: 20px;
+	font-weight: bolder;
+	font-style: italic;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#warning{
+	font-size: 10px;
+	font-weight: bolder;
+	font-style: italic;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	color: red;
+}
+#anchor{
+	transform: scale(1.2);
+}
+
+span{
+	font-size: 20px;
+	text-align: right;
+	color: white;
+	margin-left: 10px;
+	font-weight: bolder;
+	font-style: italic;
+}
+
+.text{
+	font-size: 25px;
+}
+
+#game{
+	width: 1264px;
+	height: 604px;
+	margin: auto;
+	position: relative;
+}
+td{
+	width: 32px;
+	height: 32px;
+}
+#areaOne{
+	position: absolute;
+	top: 96px;
+	left: 226px;
+}
+#playOne{
+	position: absolute;
+	top: 130px;
+	left: 260px;
+	border-spacing: 0px;
+}
+.shipBoard{
+	position: absolute;
+	top: 46px;
+	width: 128px;
+	height: 406px;
+	border: 8px solid rgb(168, 199, 132);
+}
+#shipsOne{
+	left: 32px;
+}
+#shipsTwo{
+	left: 1120px;
+}
+.icon:hover{
+	transform: scale(1.2);
+}
+#areaNameOne{
+	position: absolute;
+	top: 32px;
+	left: 226px;
+	right: 664px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bolder;
+	font-style: italic;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	color: white;
+}
+#btnBegin{
+	position: absolute;
+	top: 502px;
+	left: 598px;
+}
+#btnSaveOne{
+	position: absolute;
+	top: 502px;
+	left: 358px;
+}
+#btnSaveTwo{
+	position: absolute;
+	top: 502px;
+	left: 838px;
+}
+#back{
+	position: absolute;
+	top: 502px;
+	left: 88px;
+}
+
+#setMusic{
+	position: absolute;
+	top: 502px;
+	left: 1134px;
+}
+#setSound{
+	position: absolute;
+	top: 502px;
+	left: 1060px;
+}
+.ships{
+	background-color: aqua;
+}
+.choise{
+	background-color: rgb(255, 238, 0);
+}
+.hit{
+
+	background: url(img/icon/cross.png) no-repeat;
+}
+.miss{
+	background: url(img/icon/waves.png) no-repeat;
+}
+.dead{
+	border: 1px solid red;
+	width: 30px;
+	height: 30px;
+}
+#massageArea{
+	position: absolute;
+	top: 562px;
+	left: 32px;
+	right: 32px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bolder;
+	font-style: italic;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	color: white;
+}
+#updateArea{
+	position: absolute;
+	top: 402px;
+	left: 620px;
+}
+
+#areaTwo{
+	position: absolute;
+	top: 96px;
+	left: 700px;
+}
+#playTwo{
+	position: absolute;
+	top: 130px;
+	left: 734px;
+	border-spacing: 0px;
+}
+#areaNameTwo{
+	position: absolute;
+	top: 32px;
+	left: 700px;
+	right: 190px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bolder;
+	font-style: italic;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	color: white;
+}
